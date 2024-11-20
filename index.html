@@ -56,7 +56,7 @@
       <p class="mt-6 text-[22px] text-white drop-shadow-sm bg-green-900">
         Impulsando prácticas responsables en seguridad vial.
       </p>
-      <button id="mas-informacion" class="text-[20px] mt-8 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-lg transition hover:shadow-lg   shadow-green-900  hover:shadow-green-300">
+      <button id="mas-informacion" class="text-[20px] mt-8 px-6 py-3 bg-green-600 hover:bg-green-600 text-white font-semibold rounded-lg shadow-lg transition hover:shadow-lg   shadow-green-900  hover:shadow-green-300">
         Descubre más
       </button>
       
@@ -226,21 +226,36 @@
       
       <!-- Formulario -->
       <div class="w-full md:w-1/2 px-6 md:px-8">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-green-700 text-center md:text-left">Mantente informado con nosotros</h2>
-        <p class="mt-4 text-lg md:text-xl text-gray-700 text-center md:text-left">Recibe actualizaciones y noticias sobre seguridad vial directamente en tu correo electrónico.</p>
-        
-        <form class="mt-8 space-y-6">
-          <div class="flex flex-col space-y-4">
-            <input type="text" name="nombre" placeholder="Nombre Completo" class="bg-transparent px-6 py-3 w-full  border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700 text-gray-800 placeholder-gray-400">
-            <input type="email" name="correo" placeholder="Correo Electrónico" class="bg-transparent px-6 py-3 w-full  border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700 text-gray-800 placeholder-gray-400">
-            <input type="tel" name="contacto" placeholder="Número de Contacto" class="bg-transparent px-6 py-3 w-full  border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700 text-gray-800 placeholder-gray-400">
-            <textarea name="msj" placeholder="Escribe tu mensaje" class="px-6 py-3 w-full bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700 text-gray-800 placeholder-gray-400" rows="4"></textarea>
-          </div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-green-700 text-center md:text-left">Contáctenos con nosotros</h2>
+        <p class="mt-4 text-lg md:text-xl text-gray-700 text-center md:text-left">Déjanos tu mensaje o consulta y nos pondremos en contacto contigo lo más pronto posible.</p>
+        <br>
+        <form id="form">
+            <div class="field  rounded-lg">
+              <label for="name" class="text-[18px]">Nombre</label>
+              <input type="text" name="name" id="name" class="bg-transparent w-full py-3 px-2 border-2 text-[18px] border-gray-300 " placeholder="Escribe tu nombre aquí" >
+            </div>
+<br>
+            <div class="field  rounded-lg">
+                <label for="correo" class="text-[18px]">Correo Electronico</label>
+                <input type="email" name="correo" id="correo" class="bg-transparent w-full py-3 px-2 border-2  text-[18px] border-gray-300 " placeholder="Escribe tu correo aquí" >
+              </div>
+<br>
+            <div class="field">
+                
+              <label for="reply_to" class="text-[18px]">Mensaje</label>
+              <br>
+              <input type="text" name="reply_to" id="reply_to" class="w-full flex justify-start py-3 text-[18px] bg-transparent border-2 border-gray-300 px-2" placeholder="Deja tu mensaje aquí">
+            </div>
+            <br>
+            <input type="submit" id="button" value="Enviar" class="  px-8 py-3 bg-green-500 hover:bg-green-700 text-white text-[18px] font-semibold rounded-lg shadow-md  transition" >
+          </form>
           
-          <div class="text-center">
-            <button type="submit" class="mt-4 px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition duration-200 transform hover:scale-105">Enviar</button>
-          </div>
-        </form>
+          <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+          
+          <script type="text/javascript">
+            emailjs.init('PrcqgZRI4M9yajzVv')
+          </script>
       </div>
       
       <!-- Imagen -->
@@ -508,20 +523,22 @@
         }
     });
 
-    const btn = document.getElementById('button');
+   
+
+const btn = document.getElementById('button');
 
 document.getElementById('form')
  .addEventListener('submit', function(event) {
    event.preventDefault();
 
-   btn.value = 'Sending...';
+   btn.value = 'Enviando...';
 
    const serviceID = 'default_service';
    const templateID = 'template_h14aqgi';
 
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Send Email';
+      btn.value = 'Enviar';
       alert('Sent!');
     }, (err) => {
       btn.value = 'Send Email';
