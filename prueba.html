@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSI+ Transit Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="moto.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Margarine&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+
+body{
+      font-family: "Barlow Condensed", sans-serif;
+    }
+        .correct {
+            background-color: #4caf4f96;
+        }
+        .incorrect {
+            background-color: #f4433694;
+        }
+    </style>
+</head>
+<body class="bg-green-50 min-h-screen flex flex-col items-center justify-center font ">
+
+    <!-- Encabezado -->
+    <header class="text-center mb-4 mt-4 ">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-green-700">
+            Pon a prueba tus conocimientos de Seguridad Vial.  </h1>
+        <p class="text-lg text-gray-700 mt-2">
+            
+            Responde las siguientes preguntas y descubre cuánto sabes sobre cómo mantenerte seguro en las vías.🚦
+        </p>
+    </header>
+
+    <!-- Contenedor del cuestionario -->
+    <main class="bg-white shadow-lg  p-6 w-full max-w-3xl space-y-6">
+        <form id="quizForm">
+            <!-- Pregunta 1 -->
+            <div>
+                <h2 class="text-[20px] font-semibold text-gray-800">1. ¿Sabes, qué significa esta señal?</h2>
+                <img src="https://www.movilidadytransito.info/wp-content/uploads/2024/09/Por-que-son-importantes-las-senales-de-transito-1024x576.webp" alt="Francia" class="mt-2 mb-4 w-[400px] h-48 object-cover mx-auto">
+                <div class="mt-3 space-y-2">
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] hover:bg-yellow-200 transition duration-300 ease-in-out transform hover:scale-110 cursor-pointer">
+                        <input type="radio" name="question1" value="a" class="mr-2">
+                        Cruce exclusivo para bicicletas
+                    </label>
+                    <label class="flex items-center  bg-green-50 p-3 rounded-lg text-[18px] hover:bg-yellow-200 transition duration-300 ease-in-out transform hover:scale-110 cursor-pointer  ">
+                        <input type="radio" name="question1" value="b" class="mr-2">
+                         Zona escolar
+
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] hover:bg-yellow-200   transition duration-300 ease-in-out transform hover:scale-110 cursor-pointer">
+                        <input type="radio" name="question1" value="c" class="mr-2">
+                       Paso peatonal próximo
+                    </label>
+                    <label class="flex items-center bg-green-50 z-10 p-3 rounded-lg text-[18px] hover:bg-yellow-200  transition duration-300 ease-in-out transform hover:scale-110 cursor-pointer">
+                        <input type="radio" name="question1" value="d" class="mr-2">
+                        Prohibido cruzar la calle
+                    </label>
+                </div>
+            </div>
+            <br><br>
+            <!-- Pregunta 2 -->
+            <div>
+                <h2 class="text-[20px] font-semibold text-gray-800">2. ¿Qué acción debes tomar al ver esta señal?</h2>
+                <img src="https://trafficlogix.mx/wp-content/uploads/2021/05/1.jpg" alt="Número primo" class="mt-2 mb-4 w-[400px] h-48 object-cover mx-auto">
+                <div class="mt-3 space-y-2">
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question2" value="a" class="mr-2">
+                        Incrementar la velocidad para no obstruir el tráfico
+                    </label>
+                    <label class=" flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question2" value="b" class="mr-2">
+                        Conducir a 30 km/h o menos
+                    </label>
+                    <label class=" flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question2" value="c" class="mr-2">
+                        Ignorarla si el camino está despejado
+                    </label>
+                    <label class=" flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question2" value="d" class="mr-2">
+                        Reducir la velocidad solo si hay cámaras de vigilancia
+                    </label>
+                </div>
+            </div>
+            <br><br>
+            <!-- Pregunta 3 -->
+            <div>
+                <h2 class="text-[20px] font-semibold text-gray-800">3. ¿Sabes, qué significa esta señal?</h2>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQapwQlH8P9SAarBlB_WmzLlnQsXs60VFvG4w&s" alt="Cervantes" class="mt-2 mb-4 w-[400px] h-48 object-cover mx-auto">
+                <div class="mt-3 space-y-2">
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question3" value="a" class="mr-2">
+                        
+                        Permitido estacionar
+
+
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question3" value="b" class="mr-2">
+                        Prohibido estacionar
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question3" value="c" class="mr-2">
+                        Zona exclusiva de parada rápida
+
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question3" value="d" class="mr-2">
+                        Parqueadero permitido en horas específicas
+                    </label>
+                </div>
+            </div>
+            <br><br>
+            <!-- Pregunta 4 -->
+            <div>
+                <h2 class="text-[20px] font-semibold text-gray-800">4. ¿Qué deberías hacer aquí?</h2>
+                <img src="https://media.istockphoto.com/id/117489835/es/foto/se%C3%B1al-de-cruce-de-ciervos.jpg?s=612x612&w=0&k=20&c=J8QfcE7IZg9g-vW-WbNe9v7PlpQL8xp4LhQc3hRyM3Y=" alt="Jupiter" class="mt-2 mb-4 w-[400px] h-48 object-cover mx-auto">
+                <div class="mt-3 space-y-2">
+                    <label class="flex items-center  bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question4" value="a" class="mr-2">
+                        
+                         Acelerar para evitar colisiones
+
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question4" value="b" class="mr-2">
+                        
+                         Detenerte completamente hasta que no haya peligro
+
+
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question4" value="c" class="mr-2">
+                        Reducir la velocidad y estar atento a posibles cruces de animales
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question4" value="d" class="mr-2">
+                        
+                         Ignorarla si no hay animales visibles
+                    </label>
+                </div>
+            </div>
+            <br><br>
+            <!-- Pregunta 5 -->
+            <div>
+                <h2 class="text-[20px] font-semibold text-gray-800">5. ¿Sabes, qué significa esta señal?</h2>
+                <img src="https://www.buscatucoche.com/wp-content/uploads/2021/12/tipos-senales-trafico-reglamento.jpg" alt="Mona Lisa" class="mt-2 mb-4 w-[400px] h-48 object-cover mx-auto">
+                <div class="mt-3 space-y-2">
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question5" value="a" class="mr-2">
+                        Prohibido adelantar
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question5" value="b" class="mr-2">
+                        Permitido adelantar a vehículos lentos
+
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question5" value="c" class="mr-2">
+                        Adelantar solo si el camino está despejado
+
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question5" value="d" class="mr-2">
+                        Advertencia de carril exclusivo
+                    </label>
+                </div>
+            </div> 
+            <br><br>
+            <!-- Pregunta 6 -->
+            <div>
+                <h2 class="text-[20px] font-semibold text-gray-800">6. Un conductor pasa una luz amarilla acelerando. Esto es:</h2>
+                <img src="https://www.lanacion.com.py/resizer/v2/CZQZ7UEBQZGE7IRZQLRVK4AUOA.jpg?auth=d866324d613dc9454c7f687b4dafe5d875d5ca7608a9d3ad0d1b422a6d9c5de0&width=1280&smart=true" alt="Océano" class="mt-2 mb-4 w-[400px] h-48 object-cover mx-auto">
+                <div class="mt-3 space-y-2">
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question6" value="a" class="mr-2">
+                        Seguro si no hay otros vehículos
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question6" value="b" class="mr-2">
+                        
+                        
+                    Riesgoso porque indica precaución y próximo cambio a rojo
+
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question6" value="c" class="mr-2">
+                        Permitido en todas las circunstancias
+
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question6" value="d" class="mr-2">
+                        Recomendable para evitar frenados bruscos
+                    </label>
+                </div>
+            </div>
+            <br><br>
+            <!-- Pregunta 7 -->
+            <div>
+                <h2 class="text-[20px] font-semibold text-gray-800">7. ¿Qué tipo de señal son estas?</h2>
+                <img src="https://www.escuelaargdemanejo.com.ar/images/informativas3.gif" alt="Luna" class="mt-2 mb-4 w-[400px] h-48 object-cover mx-auto">
+                <div class="mt-3 space-y-2">
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question7" value="a" class="mr-2">
+                        Preventivas
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question7" value="b" class="mr-2">
+                        Informativas
+                    </label> 
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question7" value="c" class="mr-2">
+                        Transitorias
+                    </label>
+                    <label class="flex items-center bg-green-50 p-3 rounded-lg text-[18px] transition duration-300 ease-in-out transform hover:scale-110 hover:bg-yellow-200 cursor-pointer">
+                        <input type="radio" name="question7" value="d" class="mr-2">
+                        Reglamentarias
+                    </label>
+                </div>
+            </div>
+
+            <!-- Botón para verificar respuestas -->
+            <button type="button" onclick="checkAnswers()" class="mt-6 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                Verificar Respuestas
+            </button>
+
+            <!-- Botón para reiniciar -->
+            <button type="button" onclick="resetQuiz()" class="mt-2 px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">
+                Reiniciar Cuestionario
+            </button>
+
+            <!-- Resultados -->
+            <div class="flex flex-col items-center">
+                <div id="results" class="mt-6 text-center hidden flex justify-between gap-12">
+                    <p id="correctCount" class="text-[20px] bg-green-200 p-3 text-green-700 font-bold rounded-lg"></p>
+                    <p id="incorrectCount" class="text-[20px] bg-red-200 p-3 text-red-700 font-bold rounded-lg"></p>
+                    <p id="unansweredCount" class="text-[20px] bg-gray-200 p-3 text-gray-700 font-bold rounded-lg"></p>
+                    
+                </div>
+                <br>
+                <p id="mensaje" class="text-[21px] animate-bounce"></p>
+                <br>
+                <a id="inicio" class="text-[20px]  duration-300 hover:underline font-semibold text-green-700  ease-in-out transform hover:scale-110" href="index.html"></a>
+            </div>
+        </form>
+    </main>
+
+    
+
+    <script>
+       function checkAnswers() {
+    const correctAnswers = {
+        question1: 'c',
+        question2: 'b',
+        question3: 'b',
+        question4: 'c',
+        question5: 'a',
+        question6: 'b',
+        question7: 'b'
+    };
+
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let unansweredCount = 0;
+
+    const form = document.getElementById('quizForm');
+    const questions = Object.keys(correctAnswers);
+
+    questions.forEach(question => {
+        const userAnswer = form.querySelector(`input[name="${question}"]:checked`);
+        const questionElements = form.querySelectorAll(`input[name="${question}"]`);
+        questionElements.forEach(element => {
+            element.disabled = true;
+        });
+
+        if (!userAnswer) {
+            unansweredCount++;
+        } else if (userAnswer.value === correctAnswers[question]) {
+            userAnswer.parentElement.classList.remove('bg-green-50');
+            userAnswer.parentElement.classList.add('bg-green-200', 'border-green-500');
+            correctCount++;
+        } else {
+            userAnswer.parentElement.classList.remove('bg-green-50');
+            userAnswer.parentElement.classList.add('bg-red-200', 'border-red-500');
+            incorrectCount++;
+        }
+    });
+
+    // Mostrar los resultados
+    document.getElementById('correctCount').textContent = `Respuestas correctas: ${correctCount}`;
+    document.getElementById('incorrectCount').textContent = `Respuestas incorrectas: ${incorrectCount}`;
+    document.getElementById('unansweredCount').textContent = `Preguntas no respondidas: ${unansweredCount}`;
+    document.getElementById('mensaje').textContent = `🚘¡Prueba terminada!🚘`;
+    document.getElementById('inicio').textContent = `Volver a la página principal ⏎ `  ;
+  
+
+    document.getElementById('results').classList.remove('hidden');
+}
+
+
+        function resetQuiz() {
+            const form = document.getElementById('quizForm');
+            form.reset();  // Resetear el formulario
+
+            // Eliminar los estilos de respuestas correctas e incorrectas
+            const questionElements = form.querySelectorAll('.correct, .incorrect');
+            questionElements.forEach(element => {
+                element.classList.remove('correct', 'incorrect');
+            });
+
+            // Habilitar las respuestas
+            const questionInputs = form.querySelectorAll('input');
+            questionInputs.forEach(input => {
+                input.disabled = false;
+            });
+
+            // Ocultar los resultados
+            document.getElementById('results').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>

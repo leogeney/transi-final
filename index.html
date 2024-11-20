@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRANSI+ Transit Website</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="moto.png" class="rounded-full">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Margarine&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-green-100 text-gray-900 ">
+
+  <!-- Encabezado -->
+  <header class="flex justify-between items-center p-4 lg:p-6 shadow-lg bg-green-600">
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <div class="">
+        <span class="w-30">
+            <img class="w-[60px]" src="moto.png" alt="">
+        </span>
+      </div>
+      <h1 id="transi" class="text-2xl  lg:xl font-semibold text-white cursor-pointer flex items-center">TRANSI <span class="text-[30px]"> +</span> </h1>
+    </div>
+
+    <!-- Navegación --> 
+    <nav class="hidden md:flex space-x-6 font-medium text-white text-[20px]">
+        <a href="#" class="hover:text-green-300 transition transform">Inicio</a>
+        <a href="#" class="hover:text-green-300 transition transform">Sobre nosotros</a>
+        <a href="#" class="hover:text-green-300 transition transform">Nuestro equipo</a>
+        <a href="#" class="hover:text-green-300 transition transform">Contacto</a>
+        <a href="#" class="hover:text-green-300 transition transform">Cursos</a>
+      </nav>
+
+    <!-- Botón de contacto -->
+    <button class="bg-green-800 hover:bg-green-500 text-white font-semibold px-4 py-2 rounded-lg shadow-lg hover: ">
+      CONTÁCTENOS
+    </button>
+  </header>
+
+  <!-- Héroe -->
+  <section class="relative flex items-center justify-center h-[90vh] bg-center bg-cover"
+    style="background-image: url('https://cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/RUH2AAC3OFBEDGQNK2FLGZBRWI.jpeg');">
+    <!-- Superposición oscura -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+    <!-- Contenido -->
+    <div class="text-center relative z-10">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg" style="text-shadow: 0px 2px 11px rgba(0,0,0,0.6);">
+        <span class=" text-shadow: 0px 3px 2px rgba(235,255,44,0.6);" >Transi+:</span>
+         Impulso a la Seguridad Vial
+      </h2>
+      <p class="mt-6 text-[22px] text-white drop-shadow-sm bg-green-900">
+        Impulsando prácticas responsables en seguridad vial.
+      </p>
+      <button id="mas-informacion" class="text-[20px] mt-8 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-lg transition hover:shadow-lg   shadow-green-900  hover:shadow-green-300">
+        Descubre más
+      </button>
+      
+    </div>
+
+    <div id="chatContainer" class="fixed bottom-5 right-5 bg-green-600 shadow-xl rounded-lg overflow-hidden z-50">
+        <div class="chat-header " id="chatHeader ">
+            <span class="font-semibold text-green-700 flex items-center gap-3 ">
+                <i class="fa-solid fa-robot animate-ping-custom"></i>
+                <p>CHATBOT</p></span>
+            <button id="minimizeBtn" class="minimize-btn text-gray-600">-</button>
+        </div>
+    
+        <div id="chatWindow" class="chat-window flex flex-col h-80 w-80 border border-gray-300">
+            <!-- Ventana del chat -->
+            <div class="chat-box p-4 bg-gray-100 flex flex-col space-y-2" id="chatMessages">
+                <!-- Mensajes -->
+            </div>
+    
+            <!-- Input para escribir el mensaje -->
+            <div class="p-2 bg-gray-200">
+                <input id="chatInput" type="text" placeholder="Escribe tu mensaje..." class="chat-input focus:outline-none focus:ring-2 focus:ring-green-500"/>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Nuevo div con mensaje -->
+    
+   <!-- Sección de nuestros cursos -->
+   <section class="py-16 bg-gray-100">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-extrabold text-green-700 tracking-tight">Nuestros Cursos</h2>
+      <p class="mt-4 text-[22px] text-gray-600">
+        Programas educativos diseñados para mejorar la seguridad vial en nuestra comunidad.
+      </p>
+    </div>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
+      <!-- Curso Básico -->
+      <div class="rounded-lg shadow-md bg-white p-6 text-center hover:shadow-lg hover:border-green-500 transition">
+        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Curso Básico de Seguridad Vial</h3>
+        <p class="text-3xl font-extrabold text-green-600">$25.000 COP</p>
+        <p class="mt-4 text-gray-600 text-[18px]">1 mes de duración</p>
+        <p class="text-gray-600 text-[18px]">Asesorías prácticas</p>
+        <p class="text-gray-600 text-[18px]">Guías descargables</p>
+        <button class="mt-6 w-full px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition">
+          Más Información
+        </button>
+      </div>
+  
+      <!-- Curso de Primeros Auxilios -->
+      <div class=" rounded-lg shadow-md bg-white p-6 text-center hover:shadow-xl transition">
+        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Curso de Primeros Auxilios</h3>
+        <p class="text-4xl font-extrabold text-green-600">$50.000 COP</p>
+        <p class="mt-4 text-gray-600 text-[18px]">3 meses de duración</p>
+        <p class="text-gray-600 text-[18px]">Certificado de primeros auxilios</p>
+        <p class="text-gray-600 text-[18px]">Simulaciones prácticas</p>
+        <button class="mt-6 w-full px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-700 transition">
+          Más Información
+        </button>
+      </div>
+  
+      <!-- Curso Avanzado -->
+      <div class=" rounded-lg shadow-md bg-white p-6 text-center hover:shadow-lg hover:border-green-500 transition">
+        <h3 class="text-2xl font-semibold text-gray-700 mb-4">Curso Avanzado de Conducción Segura</h3>
+        <p class="text-3xl font-extrabold text-green-600">$75.000 COP</p>
+        <p class="mt-4 text-gray-600 text-[18px]">6 meses de duración</p>
+        <p class="text-gray-600 text-[18px]">Técnicas avanzadas</p>
+        <p class="text-gray-600 text-[18px]">Acceso a materiales exclusivos</p>
+        <button class="mt-6 w-full px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition">
+          Más Información
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <!-- Sección de Noticias -->
+  <section class="py-16 bg-gray-100">
+    <div class="text-center">
+      <h2 class="text-4xl font-extrabold text-green-700 tracking-tight">Noticias Recientes</h2>
+      <p class="mt-4 text-[21px] text-gray-600">
+        Mantente informado sobre las últimas noticias relacionadas con la seguridad vial.
+      </p>
+    </div>
+  
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
+      <!-- Noticia 1 -->
+      <div class="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden">
+        <img src="https://mintransporte.gov.co/info/mintransporte/media/pubInt/thumbs/thpubInt_700X400_11814.webp" alt="Nuevo Reglamento de Tráfico" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-green-600 group-hover:text-green-700">Nuevo Reglamento de Tráfico</h3>
+          <p class="mt-4 text-gray-600">
+            Se han implementado nuevas regulaciones para mejorar la seguridad vial en las zonas urbanas.
+          </p>
+          <button class="mt-6 px-6 py-3 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-600 transition">
+            Leer Más
+          </button>
+        </div>
+      </div>
+  
+      <!-- Noticia 2 -->
+      <div class="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden">
+        <img src="https://zonacero.com/sites/default/files/styles/1280_x_530_noticia_interna/public/2019/6/22/foto_detalle/policia_en_vacaciones_.jpeg?itok=HAtktlJu" alt="Iniciativas de Seguridad en Carreteras" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-green-600 group-hover:text-green-700">Iniciativas de Seguridad en Carreteras</h3>
+          <p class="mt-4 text-gray-600">
+            El gobierno implementará nuevas iniciativas para reducir los accidentes en carreteras nacionales.
+          </p>
+          <button class="mt-6 px-6 py-3 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-600 transition">
+            Leer Más
+          </button>
+        </div>
+      </div>
+  
+      <!-- Noticia 3 -->
+      <div class="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden">
+        <img src="https://blog.rentcars.com/wp-content/uploads/2023/04/blog.rentcars.com-consejos-para-conducir4.webp" alt="Concientización sobre Conducción Responsable" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-green-600 group-hover:text-green-700">Concientización sobre Conducción Responsable</h3>
+          <p class="mt-4 text-gray-600">
+            Campaña educativa a nivel nacional sobre la importancia de conducir de manera responsable.
+          </p>
+          <button class="mt-6 px-6 py-3 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-600 transition">
+            Leer Más
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Sección Involúcrese -->
+  <section class="relative py-16 bg-gradient-to-r from-green-100 via-green-100 to-gray-50 overflow-hidden">
+    <!-- Animación de fondo -->
+    <div class="absolute inset-0">
+      <div class="bg-gradient-to-t from-gray-400 to-transparent opacity-50 animate-pulse w-96 h-96 rounded-full absolute top-10 left-10 blur-3xl"></div>
+      <div class="bg-gradient-to-t from-gray-400 to-transparent opacity-50 animate-pulse w-80 h-80 rounded-full absolute bottom-10 right-10 blur-3xl"></div>
+      <div class="bg-gradient-to-t from-gray-400 to-transparent opacity-50 animate-pulse w-64 h-64 rounded-full absolute top-32 left-1/2 -translate-x-1/2 blur-3xl"></div>
+    </div>
+  
+    <!-- Contenido principal -->
+    <div class="relative z-10 text-center">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-green-700">¡Pon a prueba tus conocimientos!</h2>
+      <p class="mt-4 text-lg md:text-2xl text-gray-700">
+        Demuestra lo que sabes respondiendo a nuestras preguntas desafiantes y aprendiendo algo nuevo en cada intento.
+      </p>
+    </div>
+  
+    <!-- Botón -->
+    <div class="relative z-10 mt-12 text-center">
+      <a href="prueba.html">
+        <button class="hover:border-2 hover:border-green-500 hover:text-green-700 px-8 py-4 bg-green-500 text-white text-[21px] font-semibold rounded-lg shadow-md hover:bg-transparent transition  ">
+          Realizar prueba
+        </button>
+      </a>
+    </div>
+  </section>
+  
+  
+
+  <!-- Sección de Contacto -->
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-12 md:space-y-0">
+      
+      <!-- Formulario -->
+      <div class="w-full md:w-1/2 px-6 md:px-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-green-700 text-center md:text-left">Mantente informado con nosotros</h2>
+        <p class="mt-4 text-lg md:text-xl text-gray-700 text-center md:text-left">Recibe actualizaciones y noticias sobre seguridad vial directamente en tu correo electrónico.</p>
+        
+        <form class="mt-8 space-y-6">
+          <div class="flex flex-col space-y-4">
+            <input type="text" name="nombre" placeholder="Nombre Completo" class="bg-transparent px-6 py-3 w-full  border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700 text-gray-800 placeholder-gray-400">
+            <input type="email" name="correo" placeholder="Correo Electrónico" class="bg-transparent px-6 py-3 w-full  border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700 text-gray-800 placeholder-gray-400">
+            <input type="tel" name="contacto" placeholder="Número de Contacto" class="bg-transparent px-6 py-3 w-full  border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700 text-gray-800 placeholder-gray-400">
+            <textarea name="msj" placeholder="Escribe tu mensaje" class="px-6 py-3 w-full bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700 text-gray-800 placeholder-gray-400" rows="4"></textarea>
+          </div>
+          
+          <div class="text-center">
+            <button type="submit" class="mt-4 px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition duration-200 transform hover:scale-105">Enviar</button>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Imagen -->
+      <div class="w-full md:w-1/2 mt-8 md:mt-0">
+        <div class="relative w-full h-96 rounded-lg overflow-hidden shadow-xl">
+          <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d416600.6280967257!2d-73.71980131296611!3d8.22073705222613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e677b971d6d1fd1%3A0xf3eeb5f83fb498c9!2sOca%C3%B1a%2C%20Norte%20de%20Santander!5e1!3m2!1ses!2sco!4v1731992555965!5m2!1ses!2sco" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  
+  
+
+  <footer class="bg-green-700 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Columna de Información -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Sobre Transi+</h3>
+          <p class="text-lg">Impulsamos la seguridad vial mediante educación y concientización. Trabajamos para reducir accidentes y promover prácticas responsables en las vías.</p>
+        </div>
+  
+        <!-- Columna de Enlaces -->
+        <div class="text-center md:text-left">
+          <h3 class="text-2xl font-semibold mb-4">Enlaces Rápidos</h3>
+          <ul class="space-y-4">
+            <li><a href="#" class="hover:text-white transition">Inicio</a></li>
+            <li><a href="#" class="hover:text-white transition">Sobre Nosotros</a></li>
+            <li><a href="#" class="hover:text-white transition">Cursos</a></li>
+            <li><a href="#" class="hover:text-white transition">Contacto</a></li>
+          </ul>
+        </div>
+  
+        <!-- Columna de Redes Sociales -->
+        <div class="text-center md:text-left">
+          <h3 class="text-2xl font-semibold mb-4">Síguenos</h3>
+          <div class="flex justify-center md:justify-start space-x-6">
+            <a href="#" class="hover:text-green-200 transition">
+              <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="#" class="hover:text-green-200 transition">
+              <i class="fab fa-twitter fa-2x"></i>
+            </a>
+            <a href="#" class="hover:text-green-200 transition">
+              <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="#" class="hover:text-green-200 transition">
+                <i class="fab fa-youtube fa-2x"></i>
+              </a>
+              <a href="#" class="hover:text-green-200 transition">
+                <i class="fab fa-tiktok fa-2x"></i>
+              </a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Línea divisoria -->
+      <div class="border-t-2 border-green-500 mt-8 pt-6 text-center">
+        <p class="text-lg">&copy; 2024 Transi+. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+  
+  
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById('mas-informacion').addEventListener('click', () => {
+      alert('¡Gracias por tu interés! Pronto tendrás más información.');
+    });
+
+    document.getElementById('transi').addEventListener('click', function () {
+      this.classList.add('explode-animation');
+      // Elimina la clase después de que la animación termine para poder reproducirla nuevamente
+      setTimeout(() => {
+        this.classList.remove('explode-animation');
+      }, 500); // Tiempo de duración de la animación (en ms)
+    });
+
+    
+
+
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatContainer = document.getElementById('chatContainer');
+    const chatWindow = document.getElementById('chatWindow');
+    const minimizeBtn = document.getElementById('minimizeBtn');
+
+    let isMinimized = false; // Estado de la ventana (minimizada o no)
+
+    // Función para enviar mensajes
+    function sendMessage() {
+        const userMessage = chatInput.value.trim(); // Captura el mensaje del usuario
+        if (userMessage === '') return; // No hacer nada si el mensaje está vacío
+
+        // Mostrar el mensaje del usuario
+        const userMessageElement = document.createElement('div');
+        userMessageElement.classList.add( 'text-green-600', 'p-1','rounded-lg', 'right-0' ,);
+        userMessageElement.innerHTML = `<p class=" bg-gray-200 w-32 h-30 p-2 rounded-lg text-left ">${userMessage}</p>`;
+        chatMessages.appendChild(userMessageElement);
+
+        // Limpiar el campo de entrada
+        chatInput.value = '';
+
+        // Simular respuesta del chatbot con lógica básica
+        setTimeout(() => {
+            const botMessage = getBotResponse(userMessage);
+            const botMessageElement = document.createElement('div');
+            botMessageElement.classList.add('text-left', 'text-gray-700', 'p-2');
+            botMessageElement.innerHTML = `<p class="  p-2 rounded-lg w-full bg-green-200 text-green-700 text-left">${botMessage}</p>`;
+            chatMessages.appendChild(botMessageElement);
+            
+            // Desplazar hacia abajo para mostrar el último mensaje
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1000);
+
+        // Desplazar hacia abajo para mostrar el último mensaje inmediatamente
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Función para obtener la respuesta del bot basada en el mensaje del usuario
+    function getBotResponse(userMessage) {
+    userMessage = userMessage.toLowerCase(); // Convertir a minúsculas para facilitar la comparación
+
+    // Respuestas generales
+    if (userMessage.includes('hola') || userMessage.includes('hey') || userMessage.includes('buenos días')) {
+        return "¡Hola! ¿Cómo puedo ayudarte?";
+    }
+
+    if (userMessage.includes('cómo estás') || userMessage.includes('qué tal')) {
+        return "¡Estoy bien, gracias por preguntar! ¿Y tú?";
+    }
+
+    if (userMessage.includes('nombre') || userMessage.includes('quién eres')) {
+        return "Soy un chatbot creado para ayudarte. ¿En qué te puedo asistir?";
+    }
+
+    if (userMessage.includes('hora') || userMessage.includes('qué hora es')) {
+        const now = new Date();
+        return `La hora actual es: ${now.getHours()}:${now.getMinutes()}`;
+    }
+
+    if (userMessage.includes('adiós') || userMessage.includes('hasta luego')) {
+        return "¡Hasta luego! Espero verte pronto.";
+    }
+
+    // Respuestas específicas sobre seguridad vial
+    if (userMessage.includes('seguridad vial')) {
+        return "La seguridad vial busca prevenir accidentes y proteger la vida en las vías mediante normas y acciones.";
+    }
+
+    if (userMessage.includes('causas de accidentes')) {
+        return "Las principales causas de accidentes son el exceso de velocidad, el uso del móvil, y no respetar las señales.";
+    }
+
+    if (userMessage.includes('exceso de velocidad')) {
+        return "El exceso de velocidad reduce tu tiempo de reacción y aumenta la gravedad de los accidentes.";
+    }
+
+    if (userMessage.includes('qué es la señal de pare') || userMessage.includes('señal de pare')) {
+        return "La señal de PARE indica que debes detenerte completamente y ceder el paso.";
+    }
+
+    if (userMessage.includes('importancia del cinturón de seguridad')) {
+        return "El cinturón de seguridad reduce el riesgo de lesiones graves o muerte en caso de un accidente.";
+    }
+
+    if (userMessage.includes('uso del casco')) {
+        return "El casco es vital para proteger tu cabeza de lesiones graves en caso de un accidente en motocicleta.";
+    }
+
+    if (userMessage.includes('reglas básicas de tránsito')) {
+        return "Algunas reglas básicas son respetar los semáforos, no usar el móvil mientras conduces, y dar prioridad a los peatones.";
+    }
+
+    if (userMessage.includes('distracciones al volante')) {
+        return "Las distracciones más comunes son el uso del móvil, comer mientras conduces y mirar a otros lugares.";
+    }
+
+    if (userMessage.includes('qué hacer en un accidente')) {
+        return "Primero, asegúrate de estar a salvo, llama a emergencias y evita mover a los heridos si no es necesario.";
+    }
+
+    if (userMessage.includes('cómo evitar accidentes')) {
+        return "Conduce a la velocidad permitida, no uses el móvil, respeta las señales y mantén tu vehículo en buen estado.";
+    }
+
+    if (userMessage.includes('peatones seguros')) {
+        return "Los peatones deben cruzar por los pasos de cebra, mirar en ambas direcciones y usar ropa reflectante de noche.";
+    }
+
+    if (userMessage.includes('¿qué hacer si un conductor está ebrio?')) {
+        return "Nunca dejes que una persona ebria conduzca. Busca un conductor designado o utiliza transporte público.";
+    }
+
+    if (userMessage.includes('límites de velocidad')) {
+        return "Respeta los límites de velocidad establecidos para tu seguridad y la de los demás en la vía.";
+    }
+
+    if (userMessage.includes('por qué respetar semáforos')) {
+        return "Los semáforos regulan el tráfico y evitan accidentes. Respetarlos es esencial para la seguridad vial.";
+    }
+
+    if (userMessage.includes('qué son los pasos de cebra')) {
+        return "Los pasos de cebra son zonas marcadas para que los peatones crucen de manera segura.";
+    }
+
+    if (userMessage.includes('qué hacer si mi vehículo falla en la vía')) {
+        return "Enciende las luces de emergencia, estaciona en un lugar seguro y coloca señales de advertencia.";
+    }
+
+    if (userMessage.includes('tipos de señales de tránsito')) {
+        return "Existen señales preventivas, reglamentarias e informativas, cada una con un propósito específico.";
+    }
+
+    if (userMessage.includes('importancia de respetar las normas de tránsito')) {
+        return "Respetar las normas previene accidentes, protege vidas y garantiza un tráfico ordenado.";
+    }
+
+    if (userMessage.includes('cuál es la causa principal de atropellos')) {
+        return "Los atropellos suelen ocurrir por no respetar los pasos de cebra o por distracciones al volante.";
+    }
+
+    if (userMessage.includes('cómo reducir accidentes en motocicleta')) {
+        return "Usa casco, conduce a la velocidad permitida y evita maniobras riesgosas.";
+    }
+
+    if (userMessage.includes('qué hacer en caso de atropello')) {
+        return "Llama a emergencias inmediatamente, no muevas al herido y ofrece primeros auxilios si sabes cómo hacerlo.";
+    }
+
+    if (userMessage.includes('qué es un conductor designado')) {
+        return "Es una persona que no consume alcohol y se encarga de conducir para garantizar la seguridad de todos.";
+    }
+
+    if (userMessage.includes('cómo prevenir accidentes con niños en el vehículo')) {
+        return "Usa sillas de seguridad adecuadas y asegúrate de que siempre estén sujetados con el cinturón.";
+    }
+
+    // Respuesta por defecto
+    return "Lo siento, no entendí tu mensaje. ¿Puedes reformularlo?";
+}
+
+
+    // Escuchar el evento 'Enter' para enviar el mensaje
+    chatInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    // Función para minimizar/restaurar la ventana del chat
+    minimizeBtn.addEventListener('click', () => {
+        isMinimized = !isMinimized;
+
+        if (isMinimized) {
+            chatContainer.classList.add('minimized'); // Minimiza la ventana
+            minimizeBtn.innerHTML = '<i class="fa-solid fa-plus"></i>'; // Cambiar el icono a "+"
+        } else {
+            chatContainer.classList.remove('minimized'); // Restaura la ventana
+            minimizeBtn.innerHTML = '<i class="fa-solid fa-down-left-and-up-right-to-center"></i>'; // Cambiar el icono a "-"
+        }
+    });
+
+    const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_h14aqgi';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+
+
+
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    #mas-informacion:hover {
+        box-shadow: 0 4px 8px rgba(1, 255, 60, 0.6); }
+    /* Animación suave para el botón */
+    body{
+      font-family: "Barlow Condensed", sans-serif;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    @keyframes explode {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      25% {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(0.8);
+        opacity: 0.6;
+      }
+      75% {
+        transform: scale(1.1);
+        opacity: 0.9;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .explode-animation {
+      animation: explode 0.5s ease-out;
+    }
+
+
+    .chat-window {
+            max-width: 400px;
+            max-height: 600px;
+            height: 100%;
+            width: 100%;
+            transition: all 0.3s ease; /* Agregar transición suave */
+        }
+
+        .chat-box {
+            overflow-y: auto; /* Habilitar scroll vertical */
+            max-height: 450px; /* Fijar altura máxima */
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9; /* Fondo claro para mejor visibilidad */
+            border-radius: 8px;
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #acffb3;
+        }
+
+        .minimized {
+            height: 50px; /* Solo mostrar barra de título cuando está minimizado */
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f3f6f4;
+            
+            cursor: pointer;
+        }
+
+        .chat-header:hover {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #b8ffbc;
+           transition:  1s all;
+            cursor: pointer;
+        }
+
+        .chat-header .minimize-btn {
+            cursor: pointer;
+        }
+
+        /* Agregar un estilo para ocultar el chat box cuando está minimizado */
+        .minimized .chat-box {
+            display: none;
+        }
+
+        @keyframes ping-custom {
+            75%, 100% {
+                transform: scale(1.2); /* Escala ligeramente menor */
+                opacity: 0; /* Desvanece suavemente */
+            }
+        }
+        .animate-ping-custom {
+            animation: ping-custom 1.3s cubic-bezier(0.4, 0, 0.6, 1) infinite; /* Más suave y lenta */
+        }
+  </style>
+</body>
+</html>
