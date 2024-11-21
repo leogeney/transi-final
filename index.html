@@ -6,40 +6,54 @@
   <title>TRANSI+ Transit Website</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="moto.png" class="rounded-full">
+
+    <script src="sweetalert2.min.js"></script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ 
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Margarine&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body class="bg-green-100 text-gray-900 ">
 
   <!-- Encabezado -->
-  <header class="flex justify-between items-center p-4 lg:p-6 shadow-lg bg-green-600">
+  <header class="flex justify-between items-center px-6 py-4 lg:px-12 shadow-lg bg-gradient-to-r from-green-600 to-green-700">
     <!-- Logo -->
     <div class="flex items-center space-x-3">
-      <div class="">
-        <span class="w-30">
-            <img class="w-[60px]" src="moto.png" alt="">
-        </span>
+      <div>
+        <img class="w-[60px] lg:w-[70px]" src="moto2.png" alt="Logo Transi+">
       </div>
-      <h1 id="transi" class="text-2xl  lg:xl font-semibold text-white cursor-pointer flex items-center">TRANSI <span class="text-[30px]"> +</span> </h1>
+      <h1 id="transi" class="text-3xl lg:text-4xl font-extrabold text-white cursor-pointer flex items-center">
+        TRANSI<span class="text-green-300">+</span>
+      </h1>
     </div>
-
-    <!-- Navegación --> 
-    <nav class="hidden md:flex space-x-6 font-medium text-white text-[20px]">
-        <a href="#" class="hover:text-green-300 transition transform">Inicio</a>
-        <a href="#" class="hover:text-green-300 transition transform">Sobre nosotros</a>
-        <a href="#" class="hover:text-green-300 transition transform">Nuestro equipo</a>
-        <a href="#" class="hover:text-green-300 transition transform">Contacto</a>
-        <a href="#" class="hover:text-green-300 transition transform">Cursos</a>
-      </nav>
-
+  
+    <!-- Navegación -->
+    <nav class="hidden md:flex space-x-8 text-lg lg:text-xl font-medium text-white">
+      <a href="#" class="hover:text-green-300 transition duration-300">Inicio</a>
+      <a href="#" class="hover:text-green-300 transition duration-300">Sobre Nosotros</a>
+      <a href="#" class="hover:text-green-300 transition duration-300">Nuestro Equipo</a>
+      <a href="#" class="hover:text-green-300 transition duration-300">Contacto</a>
+      <a href="#" class="hover:text-green-300 transition duration-300">Cursos</a>
+    </nav>
+  
     <!-- Botón de contacto -->
-    <button class="bg-green-800 hover:bg-green-500 text-white font-semibold px-4 py-2 rounded-lg shadow-lg hover: ">
-      CONTÁCTENOS
-    </button>
+    <a href="#contacto" class="hidden md:inline-block">
+      <button class="bg-green-800 hover:bg-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
+        Contáctenos
+      </button>
+    </a>
+  
+    <!-- Botón de menú para móviles -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-white focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
   </header>
+  
 
   <!-- Héroe -->
   <section class="relative flex items-center justify-center h-[90vh] bg-center bg-cover"
@@ -62,26 +76,46 @@
       
     </div>
 
-    <div id="chatContainer" class="fixed bottom-5 right-5 bg-green-600 shadow-xl rounded-lg overflow-hidden z-50">
-        <div class="chat-header " id="chatHeader ">
-            <span class="font-semibold text-green-700 flex items-center gap-3 ">
-                <i class="fa-solid fa-robot animate-ping-custom"></i>
-                <p>CHATBOT</p></span>
-            <button id="minimizeBtn" class="minimize-btn text-gray-600">-</button>
+    <div id="chatContainer" class="fixed bottom-5 right-5 bg-green-700 shadow-xl rounded-xl overflow-hidden z-50">
+      <!-- Encabezado del chatbot -->
+      <div id="chatHeader" class="flex justify-between items-center p-4 bg-green-800 text-white rounded-t-xl">
+        <span class="font-semibold flex items-center gap-2">
+          <i class="fa-solid fa-robot text-green-300 animate-pulse"></i>
+          <p class="uppercase tracking-wider">Chatbot</p>
+        </span>
+        <button id="minimizeBtn" class="text-white hover:text-green-300 transition transform hover:scale-110">
+          <i class="fas fa-minus"></i>
+        </button>
+      </div>
+    
+      <!-- Cuerpo del chat -->
+      <div id="chatWindow" class="flex flex-col h-[400px] w-[350px] border-t border-gray-300 bg-gray-100">
+        <!-- Ventana de mensajes -->
+        <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <!-- Mensajes de ejemplo -->
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0">
+              <i class="fa-solid fa-robot text-green-600"></i>
+            </div>
+            <div class="bg-white px-4 py-2 rounded-lg shadow text-sm text-gray-700">
+              ¡Hola! ¿En qué puedo ayudarte?
+            </div>
+          </div>
+          <div class="flex items-start space-x-3 justify-end">
+            
+          </div>
         </div>
     
-        <div id="chatWindow" class="chat-window flex flex-col h-80 w-80 border border-gray-300">
-            <!-- Ventana del chat -->
-            <div class="chat-box p-4 bg-gray-100 flex flex-col space-y-2" id="chatMessages">
-                <!-- Mensajes -->
-            </div>
-    
-            <!-- Input para escribir el mensaje -->
-            <div class="p-2 bg-gray-200">
-                <input id="chatInput" type="text" placeholder="Escribe tu mensaje..." class="chat-input focus:outline-none focus:ring-2 focus:ring-green-500"/>
-            </div>
+        <!-- Input para escribir el mensaje -->
+        <div class="p-3 bg-gray-200 flex items-center">
+          <input id="chatInput" type="text" placeholder="Escribe tu mensaje..." class="w-full px-4 py-2 bg-white rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-700" />
+          <button class="ml-3 px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
+            <i class="fas fa-paper-plane"></i>
+          </button>
         </div>
+      </div>
     </div>
+    
   </section>
 
   <!-- Nuevo div con mensaje -->
@@ -103,7 +137,7 @@
         <p class="mt-4 text-gray-600 text-[18px]">1 mes de duración</p>
         <p class="text-gray-600 text-[18px]">Asesorías prácticas</p>
         <p class="text-gray-600 text-[18px]">Guías descargables</p>
-        <button class="mt-6 w-full px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition">
+        <button href="https://youtu.be/-TQzDK8zKFI?si=M4fJUq0V9rFymjmM"  class="mt-6 w-full px-6 py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition">
           Más Información
         </button>
       </div>
@@ -151,7 +185,7 @@
         <img src="https://mintransporte.gov.co/info/mintransporte/media/pubInt/thumbs/thpubInt_700X400_11814.webp" alt="Nuevo Reglamento de Tráfico" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
         <div class="p-6">
           <h3 class="text-2xl font-semibold text-green-600 group-hover:text-green-700">Nuevo Reglamento de Tráfico</h3>
-          <p class="mt-4 text-gray-600">
+          <p class="mt-4 text-gray-600 text-[18px]">
             Se han implementado nuevas regulaciones para mejorar la seguridad vial en las zonas urbanas.
           </p>
           <button class="mt-6 px-6 py-3 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-600 transition">
@@ -165,7 +199,7 @@
         <img src="https://zonacero.com/sites/default/files/styles/1280_x_530_noticia_interna/public/2019/6/22/foto_detalle/policia_en_vacaciones_.jpeg?itok=HAtktlJu" alt="Iniciativas de Seguridad en Carreteras" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
         <div class="p-6">
           <h3 class="text-2xl font-semibold text-green-600 group-hover:text-green-700">Iniciativas de Seguridad en Carreteras</h3>
-          <p class="mt-4 text-gray-600">
+          <p class="mt-4 text-gray-600 text-[18px]">
             El gobierno implementará nuevas iniciativas para reducir los accidentes en carreteras nacionales.
           </p>
           <button class="mt-6 px-6 py-3 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-600 transition">
@@ -179,7 +213,7 @@
         <img src="https://blog.rentcars.com/wp-content/uploads/2023/04/blog.rentcars.com-consejos-para-conducir4.webp" alt="Concientización sobre Conducción Responsable" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300">
         <div class="p-6">
           <h3 class="text-2xl font-semibold text-green-600 group-hover:text-green-700">Concientización sobre Conducción Responsable</h3>
-          <p class="mt-4 text-gray-600">
+          <p class="mt-4 text-gray-600 text-[18px]">
             Campaña educativa a nivel nacional sobre la importancia de conducir de manera responsable.
           </p>
           <button class="mt-6 px-6 py-3 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-600 transition">
@@ -211,7 +245,7 @@
     <!-- Botón -->
     <div class="relative z-10 mt-12 text-center">
       <a href="prueba.html">
-        <button class="hover:border-2 hover:border-green-500 hover:text-green-700 px-8 py-4 bg-green-500 text-white text-[21px] font-semibold rounded-lg shadow-md hover:bg-transparent transition  ">
+        <button class="animate-ping-custom hover:border-2 hover:border-green-500 hover:text-green-700 px-8 py-4 bg-green-500 text-white text-[21px] font-semibold rounded-lg shadow-md hover:bg-transparent transition  ">
           Realizar prueba
         </button>
       </a>
@@ -231,20 +265,20 @@
         <br>
         <form id="form">
             <div class="field  rounded-lg">
-              <label for="name" class="text-[18px]">Nombre</label>
-              <input type="text" name="name" id="name" class="bg-transparent w-full py-3 px-2 border-2 text-[18px] border-gray-300 " placeholder="Escribe tu nombre aquí" >
+              <label for="name" class="text-[19px] font-medium text-green-700">Nombre</label>
+              <input type="text" name="name" id="name" class="bg-transparent w-full py-3 px-2 border-2 text-[18px] border-gray-300 rounded-lg " placeholder="Escribe tu nombre aquí" >
             </div>
 <br>
             <div class="field  rounded-lg">
-                <label for="correo" class="text-[18px]">Correo Electronico</label>
-                <input type="email" name="correo" id="correo" class="bg-transparent w-full py-3 px-2 border-2  text-[18px] border-gray-300 " placeholder="Escribe tu correo aquí" >
+                <label for="correo" class="text-[19px] font-medium text-green-700">Correo Electronico</label>
+                <input type="email" name="correo" id="correo" class="bg-transparent w-full py-3 px-2 border-2  text-[18px] border-gray-300 rounded-lg" placeholder="Escribe tu correo aquí" >
               </div>
 <br>
             <div class="field">
                 
-              <label for="reply_to" class="text-[18px]">Mensaje</label>
+              <label for="reply_to" class="text-[19px] font-medium text-green-700">Mensaje</label>
               <br>
-              <input type="text" name="reply_to" id="reply_to" class="w-full flex justify-start py-3 text-[18px] bg-transparent border-2 border-gray-300 px-2" placeholder="Deja tu mensaje aquí">
+              <input type="text" name="reply_to" id="reply_to" class="w-full flex justify-start py-3 text-[18px] bg-transparent border-2 border-gray-300 px-2 rounded-lg" placeholder="Deja tu mensaje aquí">
             </div>
             <br>
             <input type="submit" id="button" value="Enviar" class="  px-8 py-3 bg-green-500 hover:bg-green-700 text-white text-[18px] font-semibold rounded-lg shadow-md  transition" >
@@ -271,55 +305,56 @@
   
   
 
-  <footer class="bg-green-700 text-white py-12">
-    <div class="container mx-auto px-4">
+  <footer class="bg-gradient-to-r from-green-700 to-green-800 text-white py-16">
+    <div class="container mx-auto px-6 lg:px-12">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <!-- Columna de Información -->
         <div>
-          <h3 class="text-2xl font-semibold mb-4">Sobre Transi+</h3>
-          <p class="text-lg">Impulsamos la seguridad vial mediante educación y concientización. Trabajamos para reducir accidentes y promover prácticas responsables en las vías.</p>
+          <h3 class="text-3xl font-bold mb-6">Sobre <span class="text-green-300">Transi+</span></h3>
+          <p class="text-lg leading-relaxed">Impulsamos la seguridad vial mediante educación y concientización. Trabajamos para reducir accidentes y fomentar prácticas responsables en las vías.</p>
         </div>
-  
+    
         <!-- Columna de Enlaces -->
-        <div class="text-center md:text-left">
-          <h3 class="text-2xl font-semibold mb-4">Enlaces Rápidos</h3>
-          <ul class="space-y-4">
-            <li><a href="#" class="hover:text-white transition">Inicio</a></li>
-            <li><a href="#" class="hover:text-white transition">Sobre Nosotros</a></li>
-            <li><a href="#" class="hover:text-white transition">Cursos</a></li>
-            <li><a href="#" class="hover:text-white transition">Contacto</a></li>
+        <div>
+          <h3 class="text-3xl font-bold mb-6">Enlaces Rápidos</h3>
+          <ul class="space-y-4 text-lg">
+            <li><a href="#" class="hover:text-green-300 transition">Inicio</a></li>
+            <li><a href="#" class="hover:text-green-300 transition">Sobre Nosotros</a></li>
+            <li><a href="#" class="hover:text-green-300 transition">Cursos</a></li>
+            <li><a href="#" class="hover:text-green-300 transition">Contacto</a></li>
           </ul>
         </div>
-  
+    
         <!-- Columna de Redes Sociales -->
-        <div class="text-center md:text-left">
-          <h3 class="text-2xl font-semibold mb-4">Síguenos</h3>
-          <div class="flex justify-center md:justify-start space-x-6">
-            <a href="#" class="hover:text-green-200 transition">
+        <div>
+          <h3 class="text-3xl font-bold mb-6">Síguenos</h3>
+          <div class="flex items-center space-x-6">
+            <a href="#" class="hover:text-green-300 transition">
               <i class="fab fa-facebook fa-2x"></i>
             </a>
-            <a href="#" class="hover:text-green-200 transition">
+            <a href="#" class="hover:text-green-300 transition">
               <i class="fab fa-twitter fa-2x"></i>
             </a>
-            <a href="#" class="hover:text-green-200 transition">
+            <a href="#" class="hover:text-green-300 transition">
               <i class="fab fa-instagram fa-2x"></i>
             </a>
-            <a href="#" class="hover:text-green-200 transition">
-                <i class="fab fa-youtube fa-2x"></i>
-              </a>
-              <a href="#" class="hover:text-green-200 transition">
-                <i class="fab fa-tiktok fa-2x"></i>
-              </a>
+            <a href="#" class="hover:text-green-300 transition">
+              <i class="fab fa-youtube fa-2x"></i>
+            </a>
+            <a href="#" class="hover:text-green-300 transition">
+              <i class="fab fa-tiktok fa-2x"></i>
+            </a>
           </div>
         </div>
       </div>
-  
+    
       <!-- Línea divisoria -->
-      <div class="border-t-2 border-green-500 mt-8 pt-6 text-center">
-        <p class="text-lg">&copy; 2024 Transi+. Todos los derechos reservados.</p>
+      <div class="border-t border-green-500 mt-12 pt-6 text-center">
+        <p class="text-lg text-green-100">&copy; 2024 Transi+. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
+  
   
   
 
@@ -398,20 +433,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px;
-            background-color: #f3f6f4;
-            
+            background-color: #48a145;
+            color:white;
             cursor: pointer;
         }
 
-        .chat-header:hover {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            background-color: #b8ffbc;
-           transition:  1s all;
-            cursor: pointer;
-        }
+        
 
         .chat-header .minimize-btn {
             cursor: pointer;
@@ -425,7 +452,7 @@
         @keyframes ping-custom {
             75%, 100% {
                 transform: scale(1.2); /* Escala ligeramente menor */
-                opacity: 0; /* Desvanece suavemente */
+                opacity: 1; /* Desvanece suavemente */
             }
         }
         .animate-ping-custom {
@@ -434,4 +461,27 @@
   </style>
 </body>
     <script src="./ia.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script>
+      const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_h14aqgi';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+    </script>
 </html>

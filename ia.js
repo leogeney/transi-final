@@ -57,7 +57,7 @@ document.getElementById('mas-informacion').addEventListener('click', () => {
       // Mostrar el mensaje del usuario
       const userMessageElement = document.createElement('div');
       userMessageElement.classList.add( 'text-green-600', 'p-1','rounded-lg', 'right-0' ,);
-      userMessageElement.innerHTML = `<p class=" bg-gray-200 w-32 h-30 p-2 rounded-lg text-left ">${userMessage}</p>`;
+      userMessageElement.innerHTML = `<p class=" bg-gray-200 w-full h-30 p-2 rounded-lg text-left ">${userMessage}</p>`;
       chatMessages.appendChild(userMessageElement);
 
       // Limpiar el campo de entrada
@@ -101,10 +101,10 @@ async  function getBotResponse(userMessage) {
 
       if (isMinimized) {
           chatContainer.classList.add('minimized'); // Minimiza la ventana
-          minimizeBtn.innerHTML = '<i class="fa-solid fa-plus"></i>'; // Cambiar el icono a "+"
+          minimizeBtn.innerHTML = '<i class="fa-solid fa-plus text-white"></i>'; // Cambiar el icono a "+"
       } else {
           chatContainer.classList.remove('minimized'); // Restaura la ventana
-          minimizeBtn.innerHTML = '<i class="fa-solid fa-down-left-and-up-right-to-center"></i>'; // Cambiar el icono a "-"
+          minimizeBtn.innerHTML = '<i class="fa-solid fa-down-left-and-up-right-to-center text-white"></i>'; // Cambiar el icono a "-"
       }
   });
 
